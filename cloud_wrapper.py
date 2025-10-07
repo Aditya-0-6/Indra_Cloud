@@ -5,7 +5,22 @@ from cloud_config import GCS_BUCKET_NAME
 
 import os
  
-
+class CloudStorageWrapper:
+    """
+    A simple wrapper class for Google Cloud Storage operations.
+    It abstracts away the direct SDK calls for common tasks.
+    """
+ 
+    def __init__(self):
+        """Initializes the GCS client and connects to the configured bucket."""
+        try:
+            self.client = storage.Client()
+            self.bucket = self.client.bucket(GCS_BUCKET_NAME)
+            print(f"Wrapper connected to bucket: {GCS_BUCKET_NAME}")
+        except Exception as e:
+            print(f"ERROR: Could not initialize GCS client or connect to bucket. {e}")
+            self.bucket = None
+ 
  
     def upload_file(self, local_path: str, remote_path: str) -> bool:
 
