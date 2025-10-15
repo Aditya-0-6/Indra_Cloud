@@ -1,4 +1,3 @@
- 
 class CloudError(Exception):
 
     """Base exception for all custom cloud wrapper errors."""
@@ -22,4 +21,3 @@ class FileOperationError(CloudError):
         message = f"Failed to {operation} file at path '{path}'. Original Error: {original_error}"
 
         super().__init__(message)
- 
