@@ -1,4 +1,3 @@
-
 from google.cloud import storage
 
 from cloud_config import GCS_BUCKET_NAME
