@@ -1,5 +1,4 @@
 # cloud_config.py
-
 # --- Configuration Settings ---
 # IMPORTANT: Replace this with your actual Google Cloud Storage bucket name.
 GCS_BUCKET_NAME = "your-unique-cloud-storage-bucket-name"
